@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Notes App</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css">
+</head>
+<body class="p-4">
+    <h1 class="mb-4">My Notes</h1>
+    <a href="/add" class="btn btn-primary mb-3">Add Note</a>
+
+    <ul class="list-group">
+        {% for note in notes %}
+        <li class="list-group-item">
+            <h5>{{ note.title }}</h5>
+            <p>{{ note.content }}</p>
+            <a href="/edit/{{ note.id }}" class="btn btn-sm btn-warning">Edit</a>
+            <a href="/delete/{{ note.id }}" class="btn btn-sm btn-danger">Delete</a>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
